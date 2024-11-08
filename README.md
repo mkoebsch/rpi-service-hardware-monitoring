@@ -1,6 +1,6 @@
 # Raspberry Pi Service and Hardware Monitoring using Discord Webhooks
 
-This Python script is monitoring the status of services (which are running under systemd) and hardware statistics: IP addresses and system health data (CPU temperature and usage, free RAM, used internet traffic) from a Raspberry Pi. 
+This Python script is monitoring the status of services (which are running under systemd) and hardware statistics, like IP addresses and system health data, from a Raspberry Pi. 
 The results will be sent automatically to a Discord Webhook in a specified interval.
 
 ![Screenshot](screenshot.png)
@@ -9,24 +9,24 @@ The results will be sent automatically to a Discord Webhook in a specified inter
 
 ## Installation
 
-1. Clone the Repository:
+### 1. Clone the Repository:
 
 ```bash
 git clone https://github.com/mkoebsch/rpi-service-hardware-monitoring.git
 cd rpi-service-hardware-monitoring
 ```
 
-2. Install the dependencies, e. g.:
+### 2. Install the dependencies, e. g.:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Configuration:
+### 3. Configuration:
 
 Adjust the values in monitoring.py of TIMER, WEBHOOK_URL and SERVICES in line 11-13 to your needs.
 
-4. Prepare for autorun via systemd, e.g.: (can be also used for other python scripts to run as service)
+### 4. Prepare for autorun via systemd, e.g.: (can be also used for other python scripts to run as service)
 
 ```bash
 sudo nano /lib/systemd/system/monitoring.service
@@ -74,3 +74,7 @@ Check the status via:
 ```bash
 sudo systemctl status monitoring.service
 ```
+
+## License
+
+This project is open-source under the MIT License. Feel free to use and modify.

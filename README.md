@@ -26,7 +26,9 @@ pip install -r requirements.txt
 
 Adjust the values in monitoring.py of TIMER, WEBHOOK_URL and SERVICES in line 11-13 to your needs.
 
-### 4. Prepare for autorun via systemd, e.g.: (can be also used for other python scripts to run as service)
+### 4. Prepare for autorun via systemd, e.g.:
+
+(can be also used for other python scripts to run as service)
 
 ```bash
 sudo nano /lib/systemd/system/monitoring.service
@@ -41,8 +43,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python /home/pi/monitoring.py
-WorkingDirectory=/home/pi
+ExecStart=/usr/bin/python /home/pi/rpi-service-hardware-monitoring/monitoring.py
 
 [Install]
 WantedBy=multi-user.target
